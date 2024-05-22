@@ -19,6 +19,7 @@ Aguardar inicializar o projeto e fazer a leitura com a câmera do celular do QrC
 
 
 <p align="flex-start">
-Obs: <strong>senha atual do usuário é "teste123@"</strong>
+<strong>senha atual do usuário é "teste123@"</strong>
+<strong>começar o fluxo de recuperação de senha e depois o login</strong>
 nodejs: v20.9.0
 </p>
