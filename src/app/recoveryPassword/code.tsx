@@ -1,3 +1,4 @@
+import SendCode from '@/api/services/SendCode'
 import ValidateCodeEmail from '@/api/services/ValidateCode'
 import Button from '@/components/button'
 import { MaterialIcons } from '@expo/vector-icons'
@@ -49,6 +50,28 @@ export default function RecoveryPassword(){
     }
   }, [data])
 
+  const ResendCode = async () => {
+    setLoading(true)
+    
+    try {
+      const response = await SendCode({
+        email: data.email,
+      })
+      
+      if(!response.error){
+        await AsyncStorage.setItem('email-code', data.email)
+        Alert.alert("Código reenviado para o seu email.")
+        push('recoveryPassword/code')
+      }else {
+        Alert.alert(response.mensagem.replaceAll('+', ' '))
+        setLoading(false)
+      }
+    }catch (err) {
+      setLoading(false)
+      Alert.alert(String(err))
+    }
+  }
+
   return (
     <View className='flex-1 p-4'>
       <View className='flex flex-row items-center justify-between px-4 m-4 w-2/3'>
@@ -93,7 +116,7 @@ export default function RecoveryPassword(){
             variant="text"
             align='items-start'
             justify='justify-start'
-            onPress={() => {}}
+            onPress={() => ResendCode()}
             icon={loading ? 'pending' : undefined}
             loading={loading}
           />

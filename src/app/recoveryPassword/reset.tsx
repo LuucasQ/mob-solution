@@ -100,7 +100,7 @@ export default function RecoveryPassword(){
 
             <Text className='mt-4 mb-2'>Pré-requisitos</Text>
             {requirements.map((requirement) => (
-              <View className='flex flex-row items-center'>
+              <View key={requirement.label} className='flex flex-row items-center'>
                 <MaterialIcons name={requirement.valid ? 'check-circle-outline' : 'cancel'} color={requirement.valid ? 'green' : 'red'} size={20} />
                 <Text className={`text-sm font-normal ml-1 ${requirement.valid ? 'text-green-600' : 'text-red-500'}`}>{requirement.label}</Text>
               </View>

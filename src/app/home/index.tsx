@@ -44,6 +44,7 @@ export default function Home(){
    }
   }
 
+
   const fetchTema = async () => {
     try{
       const response = await Tema({ idUsuario: id ?? '', ordenacao: picker as "A_Z" | "Z_A" | "TEMA_MAIS_DOMINADO" | "TEMA_MENOS_DOMINADO" | "TEMA_MAIS_RESPONDIDO" ?? 'A_Z' })
