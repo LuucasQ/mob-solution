@@ -7,9 +7,9 @@ Após a instalação do App, é necessário clonar o repositório, segue o repos
 
 <p align="flex-start">
 Após clonado o repositório, adicionar o arquivo .env na raiz do projeto com respectivos valores:
-URL_API=https://utisoftsandbox.appws.com.br/
+URL_API=url_api
 <br />
-TOKEN_ACESSO=b10583a254678158a93da0
+TOKEN_ACESSO=tokenacesso
 <br />
 <br />
 Seguido isso, é necessário rodar o comando `<strong>npm i</strong>` no terminal e após a instalação de todas as dependências, rodar o comando `<strong>npm start</strong>` ou `<strong>npx expo start</strong>`.
