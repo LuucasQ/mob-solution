@@ -53,9 +53,9 @@ export default function RecoveryPassword(){
       
       if(response.erro){
         setLoading(false)
-        Alert.alert(response.mensagem)
+        Alert.alert(response.mensagem.replaceAll("+", " "))
       }else {
-        Alert.alert(response.mensagem.replace('+', ' '))
+        Alert.alert(response.mensagem.replaceAll('+', ' '))
         push('recoveryPassword/resetSuccess')
       }
     }catch(err){
